@@ -1,0 +1,18 @@
+void sigusr1_handler(int);
+int32_t pd_open(struct persistent_data *);
+int32_t pd_sync(struct persistent_data *);
+int32_t pd_close(struct persistent_data *);
+int32_t slave_connect(struct master *, char *, char *);
+int32_t slave_check_response(struct master *, char *, char *);
+int32_t slave_send_stopquit(struct master *);
+void *be_a_replication_slave(void *);
+void *be_a_replication_master(void *);
+void *be_a_stats_listener(void *);
+void *be_a_listener(void *);
+void *be_a_thread_reaper(void *);
+void *be_a_signal_handler(void *);
+int32_t replication_connect_masters(void);
+void usage(void);
+void parse_cmdline(int32_t, char *[]);
+void read_cfg(char *);
+int32_t main(int32_t, char *[]);
